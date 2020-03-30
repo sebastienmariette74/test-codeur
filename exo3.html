@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+    <head>
+        <meta charset = "UTF-8">
+        <title>Document</title>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+       
+    </head>
+
+    <body>
+        <div id="root"></div>
+        <div id="root2"></div>
+        <div id="root3"></div>
+
+        <script>
+
+            // let x = 12;
+            // let y = "bonjour";
+            // let z = 'bonsoir';
+
+            // if (x > 0 && x <12){
+            //     alert ("c'est le matin");
+            // }else if (x==12){
+            //     alert("il est midi");
+            // }else if (x > 12 && x < 19){
+            //     alert("c'est l'apres-midi");
+            // }else if(x > 19 && x <= 24) {
+            //     alert("c'est le soir")
+            // }else {
+            //     alert ("cette heure n'existe pas")
+            // }
+            // switch(x){
+            //     case "2":
+            //     document.getElementById('root').innerHTML = "vous êtes chanceux";
+            //     break;
+            //     case '4':
+            //     document.getElementById('root').innerHTML = "vous êtes un veinard";
+            //     break;
+            //     default:
+            //     document.getElementById('root').innerHTML = "dommage";
+            // }
+
+            // while (x < 10){
+            //     document.getElementById('root').innerHTML += "x vaut : " + x + " et c'est le tour n° " + (x+1) + "<br>";
+            //     x++;
+            // }
+            
+            // do{
+            //     document.getElementById('root').innerHTML += "x vaut : " + x + " et c'est le tour n° " + (x+1) + "<br>";
+            //     x++;
+            // }
+            // while (x < 10);
+            
+            // for(let i = 0 ; i < 10 ; i++){
+            //     document.getElementById('root').innerHTML += "i vaut : " + i + ' tour n° : ' + (i+1) + "<br>";
+            // }
+
+            // 
+            
+            // let text = function (){
+            //     document.getElementById('root').innerHTML = "ca marche !!!";
+            // }
+
+            // text();
+            
+            // (function (){
+            //     document.getElementById('root').innerHTML = "ca marche !!!";
+            // })();
+            
+            // let para = document.getElementById('root');
+            // para = addEventListener('click', souris());
+            // function souris(){
+            //     return "tu es doué";
+            // }
+
+            // function decompte(t){
+            //     if (t > 0 ){
+            //         document.getElementById('root').innerHTML += "t vaut : " + t + '<br>';
+            //         return decompte(t - 1);
+            //     } else {
+            //         return t;
+            //         // document.getElementById('root').innerHTML = "t vaut : " + t;
+            //     }
+            // }
+
+            // decompte (15);
+
+            // let utilisateur = {
+            //     identite : ['seb', 'mariette'],
+            //     age : 44,
+            //     hobby : 'informatique',
+            //     peurs : {
+            //         peur1 : 'angoisse',
+            //         peur2 : 'foule',
+            //         peur3 : 'araignées',
+            //     },
+            //     bonjour : function(){
+            //         return ("Bonjour, je m'appelle " + this.identite + ", j'ai " + this.age + " ans. Mon hobby préféré : " + this.hobby + ". Ma peur du moment est " + this.peurs.peur2);
+            //     }
+            // }
+            // utilisateur.identite[0] = "elisa";
+            // document.getElementById('root').innerHTML = utilisateur.bonjour();
+
+            // function Utilisateur (n, a, h){
+            //     this.nom = n,
+            //     this.age = a,
+            //     this.hobby = h
+            // }
+            
+            // Utilisateur.prototype.taille = 170;
+            // Utilisateur.prototype.bonjour = function(){
+            //         return ("Bonjour, je m'appelle " + this.nom + ", j'ai " + this.age + " ans. Mon hobby préféré : " + this.hobby + "." + " Je mesure " + this.taille + ".");
+            //     };
+
+            // let utilisateur1 = new Utilisateur("seb", 44, "sport");
+            // let utilisateur2 = new Utilisateur("elisa", 42, "info");
+           
+            // document.getElementById('root').innerHTML = utilisateur1.bonjour();
+            // document.getElementById('root2').innerHTML = utilisateur2.bonjour();
+
+            // function Ligne (longueur){
+            //     this.longueur = longueur
+            // }
+            // Ligne.prototype.taille = function(){
+            //     document.getElementById('root').innerHTML = "longueur = " + this.longueur;
+            // }
+
+            // function Rectangle (longueur, largeur){
+            //     Ligne.call(this, longueur),
+            //     this.largeur = largeur
+            // }
+
+            // Rectangle.prototype = Object.create(Ligne.prototype);
+            // Rectangle.prototype.constructor = Rectangle;
+            // Rectangle.prototype.aire = function (){
+            //     document.getElementById('root2').innerHTML = "aire = " + this.longueur * this.largeur;
+            // }
+
+            // function Para (longueur, largeur, hauteur){
+            //     Rectangle.call(this, longueur, largeur),
+            //     this.hauteur = hauteur
+            // }
+            // Para.prototype = Object.create(Rectangle.prototype);
+            // Para.prototype.constructor = Para;
+            // Para.prototype.surface = function(){
+            //     document.getElementById('root3').innerHTML = "surface = " + this.longueur * this.largeur * this.hauteur;
+            // }
+            // let geo1 = new Para(5, 2, 3);
+            // geo1.taille();
+            // geo1.aire();
+            // geo1.surface();
+
+            // let geo2 = new Rectangle(6, 4);
+            // geo2.taille();
+            // // geo2.aire();
+
+            // class Identite {
+            //     constructor(nom, prenom){
+            //         this.nom = nom;
+            //         this.prenom = prenom
+            //         }
+            //         identiteComplete(){
+
+            //             document.getElementById('root').innerHTML += 'identité complète : ' + this.nom + " " + this.prenom + "<br>"                    
+            //     }
+            // }
+            // let s = new Identite ("seb", 'MARIETTE');
+            // let e = new Identite ("elisa", 'MARIETTE');
+            // s.identiteComplete();
+            // e.identiteComplete();
+
+            // class EtatCivil extends Identite{
+            //     constructor(nom, prenom, date, lieu){
+            //         super(nom, prenom);
+            //         this.date = date;
+            //         this.lieu = lieu;
+            //     }
+            //     etatCivil(){
+            //         document.getElementById('root2').innerHTML = "Etat civil : " + this.nom + " " + this.prenom + " " + "né le " + this.date + " à " + this.lieu + "<br>"
+            //     }
+            // }
+
+            // let q = new EtatCivil('Quentin', 'MARIETTE', "20/01/2017", "THONON");
+            // q.etatCivil();
+            // q.identiteComplete();
+
+            // let prenoms = ["seb", 'elisa', 'jean'];
+
+            // for (let tableauPrenom of prenoms){
+            //     document.getElementById('root').innerHTML += tableauPrenom + "<br>"
+            // }
+                
+           
+            class Compte {
+                constructor (client, balance){
+                this.client = client;
+                this.balance = balance;
+                }
+                affichageBalance (){
+                    document.getElementById('root').innerHTML += 'le solde du client ' + this.client + " est de " + this.balance + " €. <br>"
+                }
+                depot (montant){
+                    document.getElementById('root').innerHTML += 'le montant du dépôt est de ' + montant + " €. <br>";
+                    this.balance += montant;
+                    this.affichageBalance ();
+                }
+                retrait (montant){
+                    if (montant>this.balance){
+                        alert ("opération impossible !!!")
+                    }else{
+                        document.getElementById('root').innerHTML += 'le montant du retrait est de ' + montant + " €. <br>";
+                    this.balance -= montant;
+                    this.affichageBalance ();
+                    }
+                }
+            }
+
+            const mariette = new Compte ("mariette", 500);
+            mariette.affichageBalance();
+            mariette.depot(50);
+            mariette.retrait(100);
+            mariette.retrait(100);
+            mariette.retrait(100);
+            mariette.retrait(100);
+            mariette.retrait(100);
+
+            const elisa = new Compte ("elisa", 756);
+            elisa.affichageBalance();
+            elisa.depot(50);
+            elisa.retrait(100);
+            elisa.retrait(100);
+            elisa.retrait(100);
+            elisa.retrait(100);
+            elisa.retrait(100);
+
+
+
+
+
+
+        </script> 
+    </body>
+
+</html>

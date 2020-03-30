@@ -1,0 +1,78 @@
+    <!DOCTYPE html>
+
+        <head>
+            <meta charset = "UTF-8">
+            <title>Document</title>
+            <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+            <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+            <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+        
+        </head>
+
+        <body>
+            <div id="root"></div>
+
+            <script type="text/babel">
+
+                function Ajout (){
+                    return (
+                        <div>en anglais</div>
+                    )
+                }
+
+                const title = <h1>titre du paragraphe  <Ajout/> </h1>;
+                const title2 = <h1>titre du paragraphe 2</h1>;
+                const x = 2;
+                let affichage = 0;
+                const plus = <p>ok</p>
+
+
+
+
+                function Title (){
+                    if (x === 2){
+                        affichage = title
+                    }else{
+                        affichage = title2
+                    }
+                    return (
+                        <div>
+                            {affichage}
+                            {plus} 
+                        </div>
+                    );
+                }
+                
+                function Title2 (){
+                    return (
+                        <div>
+                            {title2}
+                        </div>
+                    );
+                }
+
+                function Identity({prenom, nom, departement}){
+                    return(
+                        <div>hello {prenom} {nom} du {departement} </div>
+                    )
+                }
+                function Identity2(props){
+                    return(
+                        <div>
+                            <h1>identité poussée</h1>
+                            <Identity  {...props}></Identity>
+                        </div>
+                    )
+                }
+
+            ReactDOM.render (
+                <div>
+                    <Identity2  prenom={'seb'} nom={'mariette'} departement={'91'}/>
+                </div>,
+                document.getElementById('root')
+            )
+            
+            </script> 
+        </body>
+
+    </html>

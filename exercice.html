@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type='text/babel'>
+    
+        class Header extends React.Component{
+            render(){
+                return(
+                    <div>
+                        Bienvenue {this.props.name} !!!
+                    </div> 
+                )
+            }
+        }
+        class Nav extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <ul>
+                            <li>Accueil</li>
+                            <li>Profil</li>
+                            <li>Activités</li>
+                            <li>Contact</li>
+                        </ul>
+                    </div>
+                )
+            }
+        }
+
+        function Section({sport}){
+            return(
+                <div>
+                    <h1>{sport}</h1>
+                    <p>un paragraphe</p>
+                    <a href="http://www.elisamariette.com">site favori</a>
+                </div>
+            );
+        }
+
+        ReactDOM.render (
+            <div>
+                <Header name='seb'/>
+                <Nav/>
+                <Section sport={"hand"}></Section>                
+                <Section sport='foot'></Section>
+                <Section sport='tennis'></Section>
+            </div>,
+            document.getElementById('root')
+        );     
+    </script>
+    
+</body>
+</html>
